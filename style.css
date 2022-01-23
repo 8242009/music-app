@@ -1,0 +1,16 @@
+h1{
+    background-color:#FF10F0;
+    width: 500px;
+    border-radius: 10px;
+}
+
+h2{
+    background-color:#0096FF;
+    width: 400px;
+    border-radius: 10px;
+}
+
+canvas{
+    border: 5px white;
+    border-radius: 20px;
+}

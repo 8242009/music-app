@@ -1,7 +1,14 @@
 h1{
     background-color:#FF10F0;
-    width: 500px;
+    font-size: 30px;
+    width: 100%;
+    margin: 0px;
     border-radius: 10px;
+}
+
+.note{
+    font-size: 15px;
+    color: white;
 }
 
 h2{

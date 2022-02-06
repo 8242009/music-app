@@ -15,21 +15,41 @@ function draw(){
   fill("#00ff00");
   stroke("#ff0000");
 
-  song_name = song.isPlaying();
-  console.log(song_name);
+  Hsong=song.isPlaying();
+  console.log(song);
+
+  Hsong_1=song_1.isPlaying();
+  console.log(song_1);
+
+
   
   if(scoreleftWrist > 0.2){
     circle(leftWrist_x,leftWrist_y,20);
     song_1.stop();
-    if(song_name == false){
+    if(Hsong == false){
       song.play();
   }
   else{
-      console.log("Song Name: Song1");
-      document.getElementById("music").innerHTML = "Song Name: song1";
+      console.log("Song Name: Song");
+      document.getElementById("music").innerHTML = "Song Name: song";
   }
 }
+
+
+if(scoreRightWrist > 0.2){
+  circle(rightWristX,rightWristY,20);
+  song.stop();
+  if(Hsong_1 == false){
+    song_1.play();
 }
+else{
+    console.log("Song Name: Song1");
+    document.getElementById("music").innerHTML = "Song Name: songq";
+}
+}
+}
+
+
 function modelLoaded() {
   console.log('PoseNet Is Initialized');
 }
@@ -56,6 +76,10 @@ function gotPoses(results){
         console.log(results);        
         scoreleftWrist = results[0].pose.keypoints[9].score;
         console.log(scoreleftWrist);
+
+        scoreRightWrist = results[0].pose.keypoints[9].score;
+        console.log(scoreRightWrist);
+
         leftWristX=results[0].pose.leftWrist.x;
         leftWristY=results[0].pose.leftWrist.y;
         console.log("leftWristX="+leftWristX+"leftWristY="+leftWristY);
